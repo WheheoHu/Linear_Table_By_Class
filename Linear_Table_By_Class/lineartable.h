@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 const int ListSize = 100;
+const int ListInc = 10;
 template<typename T>
 class linear_Table {
 public:
@@ -36,8 +37,7 @@ bool linear_Table<T>::ListEmpty()
 template<class T>
 void linear_Table<T>::ClearList()
 {
-	delete(data);
-	data = NULL;
+	delete[] data;
 	length = 0;
 }
 
@@ -71,6 +71,14 @@ bool linear_Table<T>::ListInsert(int location, T element)
 	{
 		return false;
 		throw "OUT OF BOUND!!";
+	}
+	if (location==ListSize)
+	{
+		
+		T *TempList = new T[ListSize+ListInc];
+		memcpy(TempList, data, sizeof(T)*length);
+		delete[] data;
+		data = TempList;
 	}
 
 	for (int i = length; i >= location; i--)
