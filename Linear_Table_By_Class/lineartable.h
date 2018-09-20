@@ -72,7 +72,7 @@ bool linear_Table<T>::ListInsert(int location, T element)
 		return false;
 		throw "OUT OF BOUND!!";
 	}
-	if (location==ListSize)
+	if (length == ListSize)
 	{
 		
 		T *TempList = new T[ListSize+ListInc];
