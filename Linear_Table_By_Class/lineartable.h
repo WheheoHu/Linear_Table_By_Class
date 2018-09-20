@@ -24,6 +24,7 @@ template<typename T>
 inline linear_Table<T>::linear_Table()
 {
 	InitList();
+	//std::cout << "initialize compelete!" << std::endl;
 }
 
 template<typename T>
