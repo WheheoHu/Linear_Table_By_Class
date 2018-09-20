@@ -30,7 +30,7 @@ inline linear_Table<T>::linear_Table()
 template<typename T>
 inline linear_Table<T>::~linear_Table()
 {
-	delete data;
+	delete[] data;
 }
 
 template<typename T>
